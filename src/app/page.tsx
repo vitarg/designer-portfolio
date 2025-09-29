@@ -1,11 +1,14 @@
 import Navbar from "@/components/Navbar";
 import TestimonialCarousel, { type Testimonial } from "@/components/TestimonialCarousel";
+import FallbackImage from "@/components/FallbackImage";
+
+const fallbackImage = "/placeholder.svg";
 
 const projects = [
   {
     title: "Квартира в стиле лофт",
     description: "Проект для молодой пары, сочетающий промышленные мотивы и уютные детали.",
-    image: "/placeholder.svg", // Replace with actual image path
+    image: "/round-rug-4.jpg",
   },
   {
     title: "Загородный дом",
@@ -100,7 +103,12 @@ export default function Home() {
               </div>
             </div>
             <div className="relative h-96 overflow-hidden rounded-3xl">
-                 <img src="/placeholder.svg" alt="Интерьер" className="h-full w-full object-cover"/>
+                 <FallbackImage
+                   src="/round-rug-4.jpg"
+                   fallbackSrc={fallbackImage}
+                   alt="Интерьер"
+                   className="h-full w-full object-cover"
+                 />
             </div>
           </div>
         </div>
@@ -121,7 +129,12 @@ export default function Home() {
                 className="group relative flex flex-col gap-3 rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-lg"
               >
                 <div className="relative h-64 w-full overflow-hidden rounded-xl">
-                    <img src={project.image} alt={project.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                    <FallbackImage
+                      src={project.image}
+                      fallbackSrc={fallbackImage}
+                      alt={project.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                 </div>
                 <div className="p-2">
                     <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
@@ -134,7 +147,12 @@ export default function Home() {
         
         <section id="about" className="grid gap-12 sm:grid-cols-2 items-center">
             <div className="relative h-[500px] w-full overflow-hidden rounded-3xl">
-                <img src="/placeholder.svg" alt="Мария Иванова" className="h-full w-full object-cover"/>
+                <FallbackImage
+                  src="/round-rug-4.jpg"
+                  fallbackSrc={fallbackImage}
+                  alt="Мария Иванова"
+                  className="h-full w-full object-cover"
+                />
             </div>
             <div className="space-y-4">
                 <h2 className="text-3xl font-semibold text-gray-900">Обо мне</h2>
